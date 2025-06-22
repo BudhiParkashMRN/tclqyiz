@@ -211,11 +211,20 @@
         }
 
         .end-image {
-            width: 250px;
-            height: auto;
-            object-fit: contain;
-            margin: 0 auto 1rem;
-        }
+    width: 300px !important; /* Larger default size */
+    height: 300px !important;
+    object-fit: contain;
+    margin: 0 auto 1rem;
+}
+
+
+
+@media (min-width: 640px) {
+    .end-image {
+        width: 300px !important; /* Even larger for larger screens */
+        height: 300px !important;
+    }
+}
         #endScreen {
     padding-top: 30px; /* Adjust this value based on the height of your logo-container */
 }
@@ -234,12 +243,6 @@
             .olympic-rings {
                 width: 100px;
             }
-            .end-image {
-            width: 250px;
-            height: 200px;
-            object-fit: contain;
-            margin: 0 auto 1rem;
-        }
         }
     </style>
 </head>
@@ -254,7 +257,7 @@
 
             <!-- Intro GIF Screen - Moved outside gameContentContainer -->
             <div id="videoScreen" class="hidden video-container">
-                <img id="introGif" src="https://i.postimg.cc/mkZhp2bZ/Untitled-design.gif" alt="Intro Animation GIF">
+                <img id="introGif" src="https://image.bikeonwheels.com/TCL-2.gif" alt="Intro Animation GIF">
             </div>
 
             <div class="game-content" id="gameContentContainer">
@@ -284,8 +287,10 @@
                     <a  href="https://www.tcl.com/in/en/" target="_blank">
                         <img id="endImage" src="" alt="Game Over Image" class="end-image">
                     </a>
-                    <p class="text-xl text-gray-800 mb-4">Your Final Score: <span id="finalScoreDisplay" class="font-bold text-blue-600">0</span></p>
-                    <p class="text-gray-700 mb-4 leading-relaxed">Thanks for playing the TCL Olympic Trivia Challenge!</p>
+                    <p class="text-lg font-bold text-black mb-2 leading-relaxed">Hey, you could win BIG! Join the TCL now to unlock exclusive rewards!</p>
+                    <p class="text-xl text-gray-800 mb-2">Your Final Score: <span id="finalScoreDisplay" class="font-bold text-blue-600">0</span></p>
+                    <p class="text-gray-700 mb-2 leading-relaxed">Thanks for playing the TCL Olympic Trivia Challenge!</p>
+                   
                     <div class="flex flex-col sm:flex-row gap-4">
                         <button id="replayBtn" class="btn bg-blue-500">Play Again</button>
                         <a href="https://tcl-landing-page.pages.dev/" target="_blank" class="btn bg-blue-500 hover:bg-blue-700">Join TCL & Win Prizes</a>
@@ -320,7 +325,7 @@
   },
   {
     question: "Which of the following sports is set to make its debut at the Los Angeles 2028 Olympic Games?",
-    options: ["Pickle Ball", "kabbadi", "Cricket", "Karate"],
+    options: ["Pickle Ball", "Kabbadi", "Cricket", "Karate"],
     correct: 2
   }
 ];
@@ -349,7 +354,7 @@
         let shuffledQuestions = [];
 
         // Preload GIF
-        const gifUrl = 'https://i.postimg.cc/mkZhp2bZ/Untitled-design.gif';
+        const gifUrl = 'https://image.bikeonwheels.com/TCL-2.gif';
         const preloadImage = new Image();
         preloadImage.src = gifUrl;
         preloadImage.onload = () => console.log('GIF preloaded successfully');
@@ -477,7 +482,7 @@
             endScreen.classList.remove('hidden');
             gameContentContainer.classList.remove('hidden'); // Ensure gameContentContainer is visible for end screen
             finalScoreDisplay.textContent = `${score} / ${questions.length}`;
-            endImage.src = 'https://i.postimg.cc/9MQrJQXm/Screenshot-2025-06-22-at-11-21-55-AM.png'; // Set end game image
+            endImage.src = 'https://image.bikeonwheels.com/Tcl-washing.png'; // Set end game image
         }
 
         function resetGame() {
