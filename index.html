@@ -218,6 +218,25 @@
 }
 
 
+@media (max-width: 640px) {
+    .video-container {
+        background-color: #bfe8f7;
+        padding: 0; /* Remove any padding that might interfere */
+    }
+
+    .video-container img {
+        width: 100%;
+        height: auto;
+        max-height: 100%; /* Slightly reduce max-height to avoid overflow on very small screens */
+        object-fit: contain;
+    }
+
+    .tv-screen {
+        padding: 1rem; /* Reduce padding on mobile for more space */
+        min-height: 400px; /* Adjust min-height for smaller screens */
+    }
+}
+
 
 @media (min-width: 640px) {
     .end-image {
@@ -226,7 +245,7 @@
     }
 }
         #endScreen {
-    padding-top: 30px; /* Adjust this value based on the height of your logo-container */
+    padding-top: 35px; /* Adjust this value based on the height of your logo-container */
 }
 
         @media (min-width: 640px) {
@@ -284,17 +303,19 @@
                 <!-- End Screen -->
                 <div id="endScreen" class="hidden">
                    
-                    <a  href="https://www.tcl.com/in/en/" target="_blank">
+                    <a  href="https://tcl-landing-page.pages.dev/" target="_blank">
                         <img id="endImage" src="" alt="Game Over Image" class="end-image">
                     </a>
-                    <p class="text-lg font-bold text-black mb-2 leading-relaxed">Hey, you could win BIG! Join the TCL now to unlock exclusive rewards!</p>
-                    <p class="text-xl text-gray-800 mb-2">Your Final Score: <span id="finalScoreDisplay" class="font-bold text-blue-600">0</span></p>
-                    <p class="text-gray-700 mb-2 leading-relaxed">Thanks for playing the TCL Olympic Trivia Challenge!</p>
-                   
+                    
+                    <p class="text-lg text-gray-800 mb-1">Your Final Score: <span id="finalScoreDisplay" class="font-bold text-blue-600">0</span></p>
+                    <p class="text-lg text-gray-700 mb-1 leading-relaxed">Thanks for playing the TCL Olympic Trivia Challenge!</p>
+                    <p class="text-sm font-bold text-black mb-1 leading-relaxed">Hey, you can get the chance to win a washing machine by sharing your details and complete the contest.</p>
                     <div class="flex flex-col sm:flex-row gap-4">
+                        
+                        <a href="https://tcl-landing-page.pages.dev/" target="_blank" class="btn bg-blue-500 hover:bg-blue-700">Click to Complete Contest</a>
                         <button id="replayBtn" class="btn bg-blue-500">Play Again</button>
-                        <a href="https://tcl-landing-page.pages.dev/" target="_blank" class="btn bg-blue-500 hover:bg-blue-700">Join TCL & Win Prizes</a>
                         <a href="https://www.tcl.com/in/en/" target="_blank" class="btn hover:bg-blue-700">Explore TCL</a>
+                        
                     </div>
                 </div>
             </div>
@@ -397,7 +418,7 @@
                 shuffledQuestions = shuffleArray([...questions]);
                 displayQuestion();
                 startTimer();
-            }, 7500); // GIF plays for 3 seconds
+            }, 6500); // GIF plays for 3 seconds
         }
 
         function displayQuestion() {
@@ -482,7 +503,7 @@
             endScreen.classList.remove('hidden');
             gameContentContainer.classList.remove('hidden'); // Ensure gameContentContainer is visible for end screen
             finalScoreDisplay.textContent = `${score} / ${questions.length}`;
-            endImage.src = 'https://image.bikeonwheels.com/Tcl-washing.png'; // Set end game image
+            endImage.src = 'https://image.bikeonwheels.com/nirma.png'; // Set end game image
         }
 
         function resetGame() {
