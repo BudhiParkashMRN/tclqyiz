@@ -216,6 +216,9 @@
             object-fit: contain;
             margin: 0 auto 1rem;
         }
+        #endScreen {
+    padding-top: 30px; /* Adjust this value based on the height of your logo-container */
+}
 
         @media (min-width: 640px) {
             .tv-container {
@@ -231,6 +234,12 @@
             .olympic-rings {
                 width: 100px;
             }
+            .end-image {
+            width: 250px;
+            height: 200px;
+            object-fit: contain;
+            margin: 0 auto 1rem;
+        }
         }
     </style>
 </head>
@@ -275,8 +284,8 @@
                     <a  href="https://www.tcl.com/in/en/" target="_blank">
                         <img id="endImage" src="" alt="Game Over Image" class="end-image">
                     </a>
-                    <p class="text-xl text-gray-800 mb-6">Your Final Score: <span id="finalScoreDisplay" class="font-bold text-blue-600">0</span></p>
-                    <p class="text-gray-700 mb-8 leading-relaxed">Thanks for playing the TCL Olympic Trivia Challenge!</p>
+                    <p class="text-xl text-gray-800 mb-4">Your Final Score: <span id="finalScoreDisplay" class="font-bold text-blue-600">0</span></p>
+                    <p class="text-gray-700 mb-4 leading-relaxed">Thanks for playing the TCL Olympic Trivia Challenge!</p>
                     <div class="flex flex-col sm:flex-row gap-4">
                         <button id="replayBtn" class="btn bg-blue-500">Play Again</button>
                         <a href="https://tcl-landing-page.pages.dev/" target="_blank" class="btn bg-blue-500 hover:bg-blue-700">Join TCL & Win Prizes</a>
@@ -311,7 +320,7 @@
   },
   {
     question: "Which of the following sports is set to make its debut at the Los Angeles 2028 Olympic Games?",
-    options: ["Squash", "Baseball", "Cricket", "Karate"],
+    options: ["Pickle Ball", "kabbadi", "Cricket", "Karate"],
     correct: 2
   }
 ];
@@ -468,7 +477,7 @@
             endScreen.classList.remove('hidden');
             gameContentContainer.classList.remove('hidden'); // Ensure gameContentContainer is visible for end screen
             finalScoreDisplay.textContent = `${score} / ${questions.length}`;
-            endImage.src = 'https://imageio.forbes.com/specials-images/imageserve/67b7a5bcc43b5b373e0d8fbd/0x0.jpg?format=jpg&height=900&width=1600&fit=bounds'; // Set end game image
+            endImage.src = 'https://i.postimg.cc/9MQrJQXm/Screenshot-2025-06-22-at-11-21-55-AM.png'; // Set end game image
         }
 
         function resetGame() {
